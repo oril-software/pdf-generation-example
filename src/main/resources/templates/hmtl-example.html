@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+        @page {
+            size: A4;
+            margin: 10px;
+        }
+        @media print {
+            @page  {
+                size: A4;
+                margin: 10px;
+            }
+        }
+
+        .column {
+            float: left;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .bordered {
+            border-bottom: 1px solid black;
+        }
+
+        .other-font {
+            font-family: Arial;
+            font-weight: lighter;
+        }
+    </style>
+</head>
+<body bgcolor="#ffffff" style="padding: 10px 20px 20px 20px; font-family: Verdana; width:720px;">
+    <div class="row">
+        <div class="column" style="width: 60%">
+            <h5 style="margin-top: 15px">EXAMPLE</h5>
+        </div>
+    </div>
+
+    <div style="margin-left: 40px; font-size: 13px;">
+        <p style="margin-top: 10px; margin-bottom: 10px">First Name: <span class="other-font" th:text="${firstName}"></span></p>
+        <p style="margin-top: 10px; margin-bottom: 10px">Last Name: <span class="other-font" th:text="${lastName}"></span></p>
+        <p style="margin-top: 10px; margin-bottom: 10px">Address: <span class="other-font" th:text="${address}"></span></p>
+        <p style="margin-top: 10px; margin-bottom: 10px">City, State, Zip: <span class="other-font" th:text="${#strings.toUpperCase(city + ', ' + state + ', ' + zipCode)}">New York, NY, 10002</span></p>
+    </div>
+
+</body>
+</html>
